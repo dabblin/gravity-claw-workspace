@@ -1,0 +1,20 @@
+{
+  "format": "gravity-claw-setup-profile",
+  "version": 1,
+  "status": "preferences-only-not-activated",
+  "team": "My business workspace",
+  "goal": "Business operations",
+  "personality": "The Strategist",
+  "inspiration": "",
+  "aiProvider": "Help me choose",
+  "channels": {
+    "telegram": false,
+    "email": "Decide later"
+  },
+  "github": {
+    "setupMode": "self-managed",
+    "owner": "",
+    "repository": "gravity-claw-workspace",
+    "visibility": "private"
+  }
+}

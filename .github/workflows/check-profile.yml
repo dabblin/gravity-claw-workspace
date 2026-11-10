@@ -1,0 +1,32 @@
+name: Check setup profile
+
+on:
+  push:
+    paths:
+      - setup-profile.json
+      - scripts/**
+      - tests/**
+      - .github/workflows/check-profile.yml
+  pull_request:
+    paths:
+      - setup-profile.json
+      - scripts/**
+      - tests/**
+      - .github/workflows/check-profile.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate setup preferences
+        run: node scripts/validate-profile.mjs setup-profile.json
+      - name: Check validator behavior
+        run: node --test tests/validate-profile.test.mjs
